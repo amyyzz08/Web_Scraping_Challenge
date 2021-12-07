@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mission to Mars</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container">
+    <!--Button -->
+    <div class="jumbotron text-center">
+      <h1>Mission to Mars</h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data!</a></p>
+    </div>
+
+    <!-- Mars News -->
+    <div class="row" id="mars_news">
+      <div class="col-md-12">
+        <h2>Latest Mars News</h2>
+        <h4 class="heading">{scrape_news.title</h4>
+        <p>{{scrape_news.paragraph}}</p>
+      </div>
+    </div>
+
+    <!--Featured Image-->
+    <div class="row" id="featured_image">
+        <div class="col-md-8">
+            <h2>Featured Image</h2>
+            <hr>
+            <img src="{scrape_featured_image}">
+        </div>
+    </div>
+
+    <!--Mars Facts-->
+    <div class="row" id="facts">
+        <div class="col-md-4">
+            <h3>Mars Facts</h3>
+            {scrape_facts}
+        </div>
+    </div>
+
+    <!--Mars Hemispheres-->
+    <div class="row" id="hemsipheres">
+        <div class="page_header">
+            <h2 class="centre">Mars Hemispheres</h2>
+        </div>
+
+        <div class="col-md-6">
+            <div class="thumbnail">
+                <img src{hemispheres_image_url.url}>
+                <div class="caption">
+                    <h2>{hemispheres_image_url.title}</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
