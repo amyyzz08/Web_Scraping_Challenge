@@ -29,4 +29,3 @@ Create a root route / that will query your Mongo database and pass the mars data
 
 
 
-
