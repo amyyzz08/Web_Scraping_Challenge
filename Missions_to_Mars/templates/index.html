@@ -21,7 +21,7 @@
     <div class="row" id="mars_news">
       <div class="col-md-12">
         <h2>Latest Mars News</h2>
-        <h4 class="heading">{scrape_news.title}</h4>
+        <h4 class="heading">{{scrape_news.title}}</h4>
         <p>{{scrape_news.paragraph}}</p>
       </div>
     </div>
@@ -39,26 +39,57 @@
     <div class="row" id="facts">
         <div class="col-md-4">
             <h3>Mars Facts</h3>
-            {scrape_facts}
+            <div>{{scrape_facts}}</div>
         </div>
     </div>
 
     <!--Mars Hemispheres-->
-    <div class="row" id="hemsipheres">
+      <div class="row" id="hemsipheres">
         <div class="page_header">
             <h2 class="centre">Mars Hemispheres</h2>
         </div>
+      </div>
 
-        <div class="col-md-6">
-            <div class="thumbnail">
-                <img src{hemispheres_image_url.url}>
-                <div class="caption">
-                    <h2>{hemispheres_image_url.title}</h2>
-                </div>
-            </div>
+     
+        <!----Mars Hemisphere 1------------------------->
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <h3>Cerberus Hemisphere</h3>
+            <img src="{{ mars_data.pic_href[0]}}" width="500" height="600" />
+          </div>
         </div>
+      </div>
+
+      <!----Mars Hemisphere 2------------------------->
+      <div class="row">
+        <div class="col-md-6">
+          <h3>Schiapraelli Hemisphere</h3>
+          <img src="{{ mars_data.pic_href[1]}}" width="500" height="600" />
+        </div>
+      </div>
+    <br></div>
+
+
+    <!----Mars Hemisphere 3------------------------------->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h3>Syrtis Hemisphere</h3>
+          <img src="{{ mars_data.pic_href[2]}}" width="500" height="600" />
+        </div>
+      </div>
     </div>
-</div>
+
+    <!----Mars Hemisphere 4--------------------------------->
+    <div class="row">
+      <div class="col-md-6">
+        <h3>Valles Marineris Hemisphere</h3>
+        <img src="{{ mars_data.pic_href[3]}}" width="500" height="600" />
+      </div>
+    </div>
+
 </body>
+
 
 </html>
