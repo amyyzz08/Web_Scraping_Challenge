@@ -39,7 +39,7 @@ def scrape_all():
     html = browser.html
     soup = bs(html, "html.parser")
 
-    image_url=img_soup.find('img', class_='fancybox-image').get('src')
+    image_url = soup.find('img', class_='fancybox-image').get('src')
     featured_image_url=f"https://spaceimages-mars.com/{image_url}"
 
     
@@ -50,7 +50,7 @@ def scrape_all():
     url_facts = "https://galaxyfacts-mars.com/"
     browser.visit(url_facts)
 
-    table_df=pd.read_html(url_facts)[0]
+    table_df = pd.read_html(url_facts)[0]
     table_df = table_df.columns=["Description","Mars","Earth"]
     facts_df = table_df.set_index("Description", inplace=True)  
 
@@ -65,13 +65,26 @@ def scrape_all():
     html = browser.html
     soup = bs(html, "html.parser")
 
-    for x in range(4):
-    title = soup.find('h2', class_='title').text
-    url = url_hemi + soup.find('li').a.get('href')
 
-    hemispheres_image_url.append({"title": title, "image url": url})
-
+    titles = soup.find_all('h3')
     
+    for title in titles: 
+        browser.links.find_by_partial_text("Hemisphere")
+
+    hemispheres = soup.find_all("div", class_="item")
+    hemi_image = []
+    hemi_url = []
+
+    for hemisphere in hemispheres:
+        link = hemisphere.find("a")
+        href = link["href"]
+        title = link.text.strip()
+
+        image = hemisphere.find("img", class_="thumb")
+        hemi_image.append(url_hemi + image["src"])
+
+    hemi_url.append({"title": title, "image url": hemi_image})
+
     
     ## Dictionary of information ## 
     mars_data={
@@ -79,7 +92,7 @@ def scrape_all():
         'news_paragraph': paragraph,
         'featured image': featured_image_url,
         'facts': facts_df.to_html(classes = "table table-striped"),
-        'hemispheres': hemispheres_image_url
+        'hemispheres': hemi_url
     }
 
 
