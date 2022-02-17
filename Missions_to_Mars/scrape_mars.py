@@ -68,12 +68,12 @@ def scrape_all():
     for result in results:
 
         # scrapping
-        link = result.find("a")
-        href = link["href"]
-        pic = result.find("img", class_="thumb")
+        link = result.find('a')
+        href = link['href']
+        pic = result.find('img', class_='thumb')
 
-        hemi_image.append(url_hemi + pic["scr"])
-        print(hemi_image)
+        hemi_image.append(url_hemi + pic['src'])
+        # print(hemi_image)
 
   
     ## Dictionary of information ## 
