@@ -58,22 +58,22 @@ def scrape_all():
     url_hemi = "https://marshemispheres.com/"
     browser.visit(url_hemi)
   
+    html = browser.html
+    soup = BeautifulSoup(html, 'html.parser')
+    
+    results = soup.find_all("div", class_="item")
 
-    for x in range(4):
+    hemi_image = []
 
-        # browse through each article
-        browser.find_by_css('a.product-item')[x].click()
-        browser.find_by_tag('a.target href')[x].click()
-
-        # parse html
-        html = browser.html
-        soup = BeautifulSoup(html, 'html.parser')
+    for result in results:
 
         # scrapping
-        hemi_image = soup.find('img').get('src')
-        print(hemi_image)
+        link = result.find("a")
+        href = link["href"]
+        pic = result.find("img", class_="thumb")
 
-        browser.back()
+        hemi_image.append(url_hemi + pic["scr"])
+        print(hemi_image)
 
   
     ## Dictionary of information ## 
