@@ -21,8 +21,8 @@
     <div class="row" id="mars_news">
       <div class="col-md-12">
         <h2>Latest Mars News</h2>
-        <h4 class="heading">{{mars_data.title}}</h4>
-        <p>{{mars_data.paragraph}}</p>
+        <h4 class="heading">{{mars_data.news_title}}</h4>
+        <p>{{mars_data.news_paragraph}}</p>
       </div>
     </div>
 
@@ -31,7 +31,7 @@
         <div class="col-md-8">
             <h2>Featured Image</h2>
             <hr>
-            <img src="{{mars_data.featured_image_url}}">
+            <img src="{{mars_data.featured_image}}">
         </div>
     </div>
 
@@ -39,7 +39,7 @@
     <div class="row" id="facts">
         <div class="col-md-4">
             <h3>Mars Facts</h3>
-            <div>{{mars_data.table | table}}</div>
+            <div>{{mars_data.facts}}</div>
         </div>
     </div>
 
@@ -64,7 +64,7 @@
       <!----Mars Hemisphere 2------------------------->
       <div class="row">
         <div class="col-md-6">
-          <h3>Schiapraelli Hemisphere</h3>
+          <h3>Schiaparelli Hemisphere</h3>
           <img src="{{ mars_data.hemi_image[1]}}" width="500" height="600" />
         </div>
       </div>
@@ -75,7 +75,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6">
-          <h3>Syrtis Hemisphere</h3>
+          <h3>Syrtis Major Hemisphere</h3>
           <img src="{{ mars_data.hemi_image[2]}}" width="500" height="600" />
         </div>
       </div>
